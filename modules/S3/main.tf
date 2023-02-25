@@ -89,7 +89,7 @@ resource "aws_s3_object" "object-upload-html" {
     acl             = "public-read"
 }
 resource "aws_s3_object" "object-upload-jpg" {
-    for_each        = fileset("uploads/", "*.jpeg")
+    for_each        = fileset("uploads/", "*.jpg")
     bucket          = data.aws_s3_bucket.selected-bucket.bucket
     key             = each.value
     source          = "uploads/${each.value}"

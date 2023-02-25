@@ -9,3 +9,8 @@ output "hosted_zone_id" {
 output "s3_object_url" {
     value = [ for vnet in aws_s3_object.object-upload-html: "https://s3.${vnet.tags_all.region}.amazonaws.com/${vnet.bucket}/${vnet.id}"]
 }
+
+output "s3_object_url_err" {
+    # value = [ for vnet in aws_s3_object.object-upload-jpg: vnet.* ]
+    value = [ for vnet in aws_s3_object.object-upload-jpg: "https://s3.${vnet.tags_all.region}.amazonaws.com/${vnet.bucket}/${vnet.id}" ]
+}
