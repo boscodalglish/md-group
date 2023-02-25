@@ -15,9 +15,3 @@ variable "enable_versioning" {
     type = bool
     default = true
 }
-variable "suffix" {
-    default = "index.html"
-}
-variable "suffix_key" {
-    default = "404.jpeg"
-}

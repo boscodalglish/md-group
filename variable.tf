@@ -14,9 +14,6 @@ variable "tags" {}
 variable "suffix" {
   default = "index.html"
 }
-variable "suffix_key" {
-  default = "404.jpeg"
-}
 
 variable "access_key" {}
 

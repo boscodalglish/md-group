@@ -2,8 +2,6 @@ module "s3_website" {
   source      = "./modules/S3"
   bucket_name = var.bucket_name
   domain_name = var.domain_name
-  suffix      = var.suffix
-  suffix_key  = var.suffix_key
 }
 
 module "route_53" {
