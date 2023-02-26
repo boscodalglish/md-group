@@ -35,7 +35,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        run: terraform plan -out=tfplan"
+        run: terraform plan -out=tfplan
         env:
           TF_VAR_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           TF_VAR_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
