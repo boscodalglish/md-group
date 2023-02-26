@@ -5,6 +5,4 @@ tags = {
   "live"        = "no"
 }
 
-domain_name = "md-group-010.com"
-
 bucket_name = "md-group-010.com"
