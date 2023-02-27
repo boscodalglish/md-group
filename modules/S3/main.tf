@@ -31,7 +31,7 @@ resource "aws_s3_bucket_cors_configuration" "cors_s3_bucket" {
 cors_rule {
     allowed_headers = ["Authorization", "Content-Length"]
     allowed_methods = ["GET", "POST"]
-    allowed_origins = ["https://www.${var.domain_name}"]
+    allowed_origins = ["https://www.${var.bucket_name}"]
     max_age_seconds = 3000
   }
 }
@@ -47,8 +47,8 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
             "Effect": "Allow",
             "Action": ["s3:GetObject"],
             "Resource": [
-                "arn:aws:s3:::www.${var.domain_name}",
-                "arn:aws:s3:::www.${var.domain_name}/*"
+                "arn:aws:s3:::www.${var.bucket_name}",
+                "arn:aws:s3:::www.${var.bucket_name}/*"
             ],
             "Principal": "*"
         }
@@ -89,7 +89,7 @@ resource "aws_s3_object" "object-upload-html" {
     acl             = "public-read"
 }
 resource "aws_s3_object" "object-upload-jpg" {
-    for_each        = fileset("uploads/", "*.jpeg")
+    for_each        = fileset("uploads/", "*.jpg")
     bucket          = data.aws_s3_bucket.selected-bucket.bucket
     key             = each.value
     source          = "uploads/${each.value}"
