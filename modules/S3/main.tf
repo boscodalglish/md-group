@@ -73,7 +73,7 @@ resource "aws_s3_bucket_website_configuration" "website_hosting" {
       key_prefix_equals = "/"
     }
     redirect {
-      replace_key_prefix_with = "index.html"
+      replace_key_prefix_with = "/index.html"
     }
   }
 
