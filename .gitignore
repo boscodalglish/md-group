@@ -33,4 +33,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+.terraform.*.hcl
+
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Terraform
