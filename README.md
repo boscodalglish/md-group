@@ -13,3 +13,6 @@ Route53 module creates a domain name and attaches SSL certificate to the domain 
 S3 module creates a S3 bucket specificly created to host SPA. I have enabled CORS for the same application so that requesting different domains to another server doen't block the content being showed.
 
 Upload folder creates the content, in this case you can deploy any SPA in this folder and it will deploy the application on S3 bucket.
+
+
+Use https://draw.io/ to open drawio files
